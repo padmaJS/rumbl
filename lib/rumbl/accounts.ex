@@ -27,4 +27,9 @@ defmodule Rumbl.Accounts do
     |> User.changeset(attrs)
     |> Repo.insert()
   end
+
+  def delete_user(id) do
+    Repo.get!(User, id)
+    |> Repo.delete!()
+  end
 end
